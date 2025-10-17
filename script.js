@@ -8,9 +8,8 @@ const translations = {
     heroSubtitle:
       "Defenda sua torre digitando as palavras que aparecem nos inimigos que se aproximam! Sobreviva ao ataque enquanto alterna idiomas e aumenta sua velocidade de digitação.",
     ctaPlay: "Jogar Agora",
-
     ctaDownload: "Baixar Jogo",
-
+    ctaDevlog: "Diário de Desenvolvimento",
     featureLevelsTitle: "10 Níveis",
     featureLevelsText: "Dificuldade Progressiva",
     featureLanguagesTitle: "2 Idiomas",
@@ -18,8 +17,7 @@ const translations = {
     featureBossTitle: "Batalhas contra Chefes",
     featureBossText: "Fases Finais Épicas",
     demoTitle: "Demonstração",
-    demoFrame:
-      "<p>Vídeo de Demonstração do Jogo</p><p>[VÍDEO]</p>",
+    demoCaption: "Vídeo de gameplay no YouTube.",
     aboutTitle: "Sobre o Jogo",
     aboutLead:
       "Digitore é um jogo de tower defense baseado em digitação, onde o jogador deve defender sua torre digitando as palavras que aparecem nos inimigos que se aproximam. O jogo traz múltiplos níveis com dificuldade crescente, animações, efeitos sonoros e um sistema de pontuação e ranking.",
@@ -77,6 +75,7 @@ const translations = {
       "Defend your tower by typing the words that appear on approaching enemies. Swap languages, build speed, and survive the retro gauntlet.",
     ctaPlay: "Play the Game",
     ctaDownload: "Download Game",
+    ctaDevlog: "Development Log",
     featureLevelsTitle: "10 Levels",
     featureLevelsText: "Progressive Difficulty",
     featureLanguagesTitle: "2 Languages",
@@ -84,8 +83,7 @@ const translations = {
     featureBossTitle: "Boss Battles",
     featureBossText: "Epic Final Levels",
     demoTitle: "Game Demo",
-    demoFrame:
-      "<p>Game Demonstration Video</p><p>[VIDEO]</p>",
+    demoCaption: "Gameplay demo on YouTube.",
     aboutTitle: "About the Game",
     aboutLead:
       "Tower of Typing is a tower-defense typing experience. Stop the oncoming horde by shredding through their words, master ten handcrafted levels, and climb the scoring ladder.",
@@ -115,7 +113,7 @@ const translations = {
     howToScoreList:
       "<li>R &mdash; Restart game</li><li>M &mdash; Back to the main menu</li><li>Enter &mdash; Confirm name entry</li>",
     howToNull: "",
-      techTitle: "Technical Features",
+    techTitle: "Technical Features",
     techFeaturesTitle: "Features",
     techFeaturesList:
       "<li>Object-oriented architecture with clear responsibilities</li><li>Pygame sprite inheritance for collision detection</li><li>Screen-based structure for each game state</li><li>Extensive docstrings on classes and methods</li><li>Organized multi-file codebase for maintainability</li>",
