@@ -5,6 +5,7 @@ const translations = {
     navInstructions: "Instruções",
     navStory: "História",
     heroTitle: "Digitore",
+    heroByline: "Devs: Mateus Ahn &amp; Pedro Ventura",
     heroSubtitle:
       "Defenda sua torre digitando as palavras que aparecem nos inimigos que se aproximam! Sobreviva ao ataque enquanto alterna idiomas e aumenta sua velocidade de digitação.",
     ctaPlay: "Jogar Agora",
@@ -58,6 +59,7 @@ const translations = {
       "<li>Clone ou baixe o repositório</li><li>Instale o Pygame: <code>pip install pygame</code></li><li>Execute: <code>python3 game.py</code></li>",
     development:
       "Este projeto nasceu como uma experiência de aprendizado em Python/Pygame, combinando mecânicas de tower defense com desafios de digitação. Evoluímos de um protótipo simples para uma aventura com 10 níveis, batalhas contra chefes e um sistema completo de pontuação.<br /><br />Criado por Mateus Ahn &amp; Pedro Ventura",
+    galleryTitle: "Capturas de Tela",
     footerBrand: "Digitore",
     footerDemo: "Demonstração",
     footerInstructions: "Instruções",
@@ -71,6 +73,7 @@ const translations = {
     navInstructions: "Instructions",
     navStory: "Storyline",
     heroTitle: "Tower of Typing",
+    heroByline: "Devs: Mateus Ahn &amp; Pedro Ventura",
     heroSubtitle:
       "Defend your tower by typing the words that appear on approaching enemies. Swap languages, build speed, and survive the retro gauntlet.",
     ctaPlay: "Play the Game",
@@ -125,6 +128,7 @@ const translations = {
       "<li>Clone or download the repository</li><li>Install Pygame: <code>pip install pygame</code></li><li>Run <code>python3 game.py</code></li>",
     development:
       "This project started as a Python/Pygame learning journey, combining tower defense mechanics with typing challenges. It evolved into a full adventure with ten handcrafted levels, boss battles, and a complete scoring system.<br /><br />Created by Mateus Ahn &amp; Pedro Ventura",
+    galleryTitle: "Screenshots",
     footerBrand: "Tower of Typing",
     footerDemo: "Game Demo",
     footerInstructions: "Instructions",
@@ -174,3 +178,64 @@ if (langToggle) {
 }
 
 applyTranslations(currentLang);
+
+// --- Simple Lightbox for the gallery ---
+(function setupGalleryLightbox() {
+  const items = Array.from(document.querySelectorAll(".gallery__item"));
+  if (!items.length) return;
+
+  const lightbox = document.querySelector("[data-lightbox]");
+  const img = lightbox?.querySelector(".lightbox__image");
+  const caption = lightbox?.querySelector(".lightbox__caption");
+  const btnClose = lightbox?.querySelector("[data-lightbox-close]");
+  const btnPrev = lightbox?.querySelector("[data-lightbox-prev]");
+  const btnNext = lightbox?.querySelector("[data-lightbox-next]");
+
+  let current = 0;
+
+  function show(index) {
+    current = (index + items.length) % items.length;
+    const el = items[current];
+    const src = el.getAttribute("data-full") || el.querySelector("img")?.src;
+    const text = el.getAttribute("data-caption") || "";
+    if (img) img.src = src;
+    if (caption) caption.textContent = text;
+  }
+
+  function open(index) {
+    if (!lightbox) return;
+    show(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  items.forEach((btn, idx) => {
+    btn.addEventListener("click", () => open(idx));
+  });
+
+  btnClose?.addEventListener("click", close);
+  btnPrev?.addEventListener("click", () => show(current - 1));
+  btnNext?.addEventListener("click", () => show(current + 1));
+
+  // Close when clicking backdrop (but not on figure or nav)
+  lightbox?.addEventListener("click", (e) => {
+    if (!(e.target instanceof Element)) return;
+    const target = e.target;
+    const clickedBackdrop = target.matches("[data-lightbox]");
+    if (clickedBackdrop) close();
+  });
+
+  // Keyboard controls
+  window.addEventListener("keydown", (e) => {
+    if (lightbox?.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+})();

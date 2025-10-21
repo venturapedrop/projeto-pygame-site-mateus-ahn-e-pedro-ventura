@@ -38,6 +38,7 @@
     <main>
       <section class="hero" id="home">
         <div class="layout">
+          <p class="hero__byline" data-i18n="heroByline">Devs: Mateus Ahn &amp; Pedro Ventura</p>
           <h1 class="hero__title" data-i18n="heroTitle">Tower of Typing</h1>
           <p class="hero__subtitle" data-i18n="heroSubtitle">
             Defend your tower by typing the words that appear on approaching
@@ -151,6 +152,24 @@
               <article class="info-card">
               </article>
              
+              <!-- Gallery card spanning the grid -->
+              <article class="info-card info-card--full gallery-card">
+                <h3 class="gallery__title" data-i18n="galleryTitle">Screenshots</h3>
+                <div class="gallery-grid" role="list">
+                  <button class="gallery__item" role="listitem" aria-label="Open screenshot 1" data-full="GameSamples/Python 2025-10-22 15.36.52.png" data-caption="Screenshot 1">
+                    <img class="gallery__img" src="GameSamples/Python 2025-10-22 15.36.52.png" alt="Gameplay screenshot 1" loading="lazy" />
+                  </button>
+                  <button class="gallery__item" role="listitem" aria-label="Open screenshot 2" data-full="GameSamples/Python 2025-10-22 15.39.23.png" data-caption="Screenshot 2">
+                    <img class="gallery__img" src="GameSamples/Python 2025-10-22 15.39.23.png" alt="Gameplay screenshot 2" loading="lazy" />
+                  </button>
+                  <button class="gallery__item" role="listitem" aria-label="Open screenshot 3" data-full="GameSamples/Python 2025-10-22 15.41.12.png" data-caption="Screenshot 3">
+                    <img class="gallery__img" src="GameSamples/Python 2025-10-22 15.41.12.png" alt="Gameplay screenshot 3" loading="lazy" />
+                  </button>
+                  <button class="gallery__item" role="listitem" aria-label="Open screenshot 4" data-full="GameSamples/Python 2025-10-22 15.43.00.png" data-caption="Screenshot 4">
+                    <img class="gallery__img" src="GameSamples/Python 2025-10-22 15.43.00.png" alt="Gameplay screenshot 4" loading="lazy" />
+                  </button>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -278,6 +297,17 @@
         </div>
       </section>
     </main>
+
+    <!-- Lightbox modal for gallery -->
+    <div class="lightbox" data-lightbox hidden aria-modal="true" role="dialog" aria-label="Screenshot viewer">
+      <button class="lightbox__close" data-lightbox-close aria-label="Close viewer">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Previous screenshot">&#10094;</button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__image" alt="Expanded screenshot" />
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Next screenshot">&#10095;</button>
+    </div>
 
     <footer class="footer">
       <div class="layout">
