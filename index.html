@@ -1,153 +1,289 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tower of Typing</title>
-</head>
-<body>
-  <header>
-    <div>
-      <span>TOT</span>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#instructions">Instructions</a>
-        <a href="#storyline">Storyline</a>
-      </nav>
-      <span>EN · PT</span>
-    </div>
-  </header>
-
-  <main>
-    <section id="home">
-      <h1>Tower of Typing</h1>
-      <p>Defend your tower by typing the words that appear on approaching enemies.</p>
-      <div>
-        <a href="#download">Play the Game</a>
-        <a href="#download">Download Game</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Typing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top-bar" id="top">
+      <div class="layout top-bar__inner">
+        <div class="brand">
+          <span class="brand__icon" aria-hidden="true">&#127918;</span>
+          <span class="brand__name" data-i18n="brandName">ToT</span>
+        </div>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#home" data-i18n="navHome">Home</a>
+          <a href="#instructions" data-i18n="navInstructions">Instructions</a>
+          <a href="#storyline" data-i18n="navStory">Storyline</a>
+        </nav>
+        <button
+          type="button"
+          class="lang-switch"
+          aria-label="Switch language to Portuguese"
+          data-lang-toggle
+        >
+          EN/PT
+        </button>
       </div>
-      <div>
-        <article>
-          <h2>10 Levels</h2>
-          <p>Progressive difficulty.</p>
-        </article>
-        <article>
-          <h2>2 Languages</h2>
-          <p>EN &amp; PT support.</p>
-        </article>
-        <article>
-          <h2>Boss Battles</h2>
-          <p>Epic final levels.</p>
-        </article>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="layout">
+          <h1 class="hero__title" data-i18n="heroTitle">Tower of Typing</h1>
+          <p class="hero__subtitle" data-i18n="heroSubtitle">
+            Defend your tower by typing the words that appear on approaching
+            enemies. Swap languages, build speed, and survive the retro gauntlet.
+          </p>
+          <div class="cta-row">
+            <a class="cta" href="#demo" data-i18n="ctaPlay">Play the Game</a>
+            <a class="cta cta--ghost" href="#download" data-i18n="ctaDownload"
+              >Download Game</a
+            >
+          </div>
+          <div class="hero__feature-grid">
+            <article class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">&#127941;</span>
+              <h3 class="feature-card__title" data-i18n="featureLevelsTitle">
+                10 Levels
+              </h3>
+              <p class="feature-card__note" data-i18n="featureLevelsText">
+                Progressive Difficulty
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">&#127760;</span>
+              <h3 class="feature-card__title" data-i18n="featureLanguagesTitle">
+                2 Languages
+              </h3>
+              <p class="feature-card__note" data-i18n="featureLanguagesText">
+                EN &amp; PT Support
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">&#10084;&#65039;</span>
+              <h3 class="feature-card__title" data-i18n="featureBossTitle">
+                Boss Battles
+              </h3>
+              <p class="feature-card__note" data-i18n="featureBossText">
+                Epic Final Levels
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="demo">
+        <div class="layout">
+          <div class="panel">
+            <h2 class="section__title" data-i18n="demoTitle">Game Demo</h2>
+            <div class="demo-frame">
+              <div data-i18n="demoFrame">
+                <p>Game Demonstration Video</p>
+                <p>[VIDEO]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="layout">
+          <div class="panel">
+            <h2 class="section__title" data-i18n="aboutTitle">About the Game</h2>
+            <p class="section__lead" data-i18n="aboutLead">
+              Tower of Typing is a tower-defense typing experience. Stop the
+              oncoming horde by shredding through their words, master ten
+              handcrafted levels, and climb the scoring ladder.
+            </p>
+            <div class="info-grid">
+              <article class="info-card" data-i18n="infoCard1">
+                <strong>10 Progressive Levels</strong>
+                Different enemy types: lowercase letters, uppercase letters, and
+                complete words.
+              </article>
+              <article class="info-card" data-i18n="infoCard2">
+                <strong>Boss System</strong>
+                Levels nine and ten unleash complex boss encounters packed with
+                tricky sequences.
+              </article>
+              <article class="info-card" data-i18n="infoCard3">
+                <strong>Dual Language Support</strong>
+                Play in Portuguese or English with adapted translations.
+              </article>
+              <article class="info-card" data-i18n="infoCard4">
+                <strong>Dynamic Backgrounds</strong>
+                Visuals evolve as you advance, keeping the atmosphere fresh.
+              </article>
+
+              <article class="info-card">
+              </article>
+             
+              <article class="info-card" data-i18n="infoCard5">
+                <strong>Sprite Animations</strong>
+                Animated sprites bring characters, explosions, and effects to
+                life.
+              </article>
+              <article class="info-card" data-i18n="infoCard6">
+                <strong>Scoring &amp; Ranking</strong>
+                Post-game rankings save to JSON so you can chase high scores.
+              </article>
+
+              <article class="info-card">
+              </article>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how-to" id="instructions">
+        <div class="layout">
+          <h2 class="section__title" data-i18n="howToTitle">How to Play</h2>
+          <div class="panel how-to__panel">
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToMainTitle">
+                Main Menu
+              </h3>
+              <ul class="how-to__list" data-i18n="howToMainList">
+                <li>S &mdash; Start game</li>
+                <li>Q &mdash; Quit</li>
+                <li>L &mdash; Switch language (PT / EN)</li>
+              </ul>
+            </article>
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToGameTitle">
+                During the Game
+              </h3>
+              <ul class="how-to__list" data-i18n="howToGameList">
+                <li>Type the letters or words floating toward the tower</li>
+                <li>Maintain accuracy to trigger explosive bonuses</li>
+                <li>ESC &mdash; Pause game</li>
+              </ul>
+            </article>
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToPauseTitle">
+                Pause Menu
+              </h3>
+              <ul class="how-to__list" data-i18n="howToPauseList">
+                <li>ESC &mdash; Resume game</li>
+                <li>M &mdash; Return to main menu</li>
+              </ul>
+            </article>
+
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToNull">
+              </h3>
+              <ul class="how-to__list" data-i18n="howToNull">
+              </ul>
+            </article>
+
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToScoreTitle">
+                Score Screens
+              </h3>
+              <ul class="how-to__list" data-i18n="howToScoreList">
+                <li>R &mdash; Restart game</li>
+                <li>M &mdash; Back to the main menu</li>
+                <li>Enter &mdash; Confirm name entry</li>
+              </ul>
+            </article>
+
+
+            <article class="how-to__card">
+              <h3 class="how-to__title" data-i18n="howToNull">
+              </h3>
+              <ul class="how-to__list" data-i18n="howToNull">
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="layout">
+          <div class="panel">
+            <h2 class="section__title" data-i18n="techTitle">Technical Features</h2>
+            <div class="technical__grid">
+              <article class="technical__card">
+                <strong data-i18n="techFeaturesTitle">Features</strong>
+                <ul data-i18n="techFeaturesList">
+                  <li>
+                    Object-oriented architecture with clear responsibilities
+                  </li>
+                  <li>
+                    Pygame sprite inheritance for collision detection
+                  </li>
+                  <li>
+                    Screen-based structure for each game state
+                  </li>
+                  <li>
+                    Extensive docstrings on classes and methods
+                  </li>
+                  <li>
+                    Organized multi-file codebase for maintainability
+                  </li>
+                </ul>
+              </article>
+              <article class="technical__card">
+                <strong data-i18n="techRequirementsTitle">Requirements</strong>
+                <ul data-i18n="techRequirementsList">
+                  <li>Python 3.7 or newer</li>
+                  <li>Pygame library</li>
+                </ul>
+              </article>
+              <article class="technical__card" id="download">
+                <strong data-i18n="techInstallTitle">Installation</strong>
+                <ul data-i18n="techInstallList">
+                  <li>Clone or download the repository</li>
+                  <li>Install Pygame: <code>pip install pygame</code></li>
+                  <li>Run <code>python3 game.py</code></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="storyline">
+        <div class="layout">
+          <div class="development" data-i18n="development">
+            This project started as a Python/Pygame learning journey, combining
+            tower defense mechanics with typing challenges. It evolved into a full
+            adventure with ten handcrafted levels, boss battles, and a complete
+            scoring system.
+            <br /><br />
+            Created by Mateus Ahn &amp; Pedro Ventura
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="layout">
+        <div class="footer__brand">
+          <span class="brand__icon" aria-hidden="true">&#127918;</span>
+          <span class="brand__name" data-i18n="footerBrand">Tower of Typing</span>
+        </div>
+        <div class="footer__links">
+          <a href="#demo" data-i18n="footerDemo">Game Demo</a>
+          <a href="#instructions" data-i18n="footerInstructions">Instructions</a>
+          <a href="#download" data-i18n="footerDownload">Download Game</a>
+        </div>
+        <p class="footer__copy" data-i18n="footerCopy">
+          &copy; Created by Mateus Ahn &amp; Pedro Ventura. All rights reserved.
+        </p>
       </div>
-    </section>
-
-    <section id="demo">
-      <h2>Game Demo</h2>
-      <p>Game demonstration video placeholder.</p>
-    </section>
-
-    <section id="about">
-      <h2>About the Game</h2>
-      <p>Tower of Typing is a tower-defense typing experience.</p>
-      <div>
-        <article>
-          <h3>Progressive Levels</h3>
-          <p>Different enemy waves.</p>
-        </article>
-        <article>
-          <h3>Boss System</h3>
-          <p>Complex encounters.</p>
-        </article>
-        <article>
-          <h3>Dual Language Support</h3>
-          <p>English and Portuguese.</p>
-        </article>
-        <article>
-          <h3>Dynamic Backgrounds</h3>
-          <p>Unique visuals per stage.</p>
-        </article>
-        <article>
-          <h3>Sprite Animations</h3>
-          <p>Animated characters.</p>
-        </article>
-        <article>
-          <h3>Scoring &amp; Ranking</h3>
-          <p>Combo-based scoring.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="instructions">
-      <h2>How to Play</h2>
-      <div>
-        <article>
-          <h3>Main Menu</h3>
-          <p>S - Start game</p>
-          <p>Q - Quit</p>
-          <p>L - Switch language</p>
-        </article>
-        <article>
-          <h3>During the Game</h3>
-          <p>Type letters or words to stop enemies.</p>
-        </article>
-        <article>
-          <h3>Pause Menu</h3>
-          <p>ESC - Resume</p>
-          <p>M - Main menu</p>
-        </article>
-        <article>
-          <h3>Score Screens</h3>
-          <p>R - Restart</p>
-          <p>Enter - Confirm</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="features">
-      <h2>Technical Features</h2>
-      <div>
-        <article>
-          <h3>Features</h3>
-          <ul>
-            <li>Object-oriented design</li>
-            <li>Sprite collision</li>
-            <li>Screen-based states</li>
-            <li>Extensive docstrings</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Requirements</h3>
-          <ul>
-            <li>Python 3.7 or newer</li>
-            <li>Pygame library</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Installation</h3>
-          <ol>
-            <li>Clone or download</li>
-            <li>Install Pygame</li>
-            <li>Run python3 game.py</li>
-          </ol>
-        </article>
-      </div>
-    </section>
-
-    <section id="analytics">
-      <h2>Project Notes</h2>
-      <p>This project began as a Python/Pygame learning journey and evolved into a full adventure.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Created by Mateus Ahn &amp; Pedro Ventura</p>
-    <div>
-      <a href="#demo">Game Demo</a>
-      <a href="#instructions">Instructions</a>
-      <a href="#download">Download Game</a>
-    </div>
-  </footer>
-</body>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
