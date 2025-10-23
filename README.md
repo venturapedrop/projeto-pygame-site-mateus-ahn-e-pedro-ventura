@@ -1,13 +1,12 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/0Upce9Sw)
-# Projeto Pygame - Site (ADICIONE O NOME DO SEU JOGO)
+# Projeto Pygame - Site Tower of Typing
 
-[ESTE ARQUIVO É APENAS UMA BASE PARA O SEU README. FIQUE À VONTADE PARA MODIFICÁ-LO COMO QUISER - APAGUE ESTA MENSAGEM :)]
 
 ## Descrição do jogo
 
-[ADICIONE AQUI UMA DESCRIÇÃO DO Jogo]
+Digitore é um jogo de tower defense baseado em digitação, onde o jogador deve defender sua torre digitando as palavras que aparecem nos inimigos que se aproximam. O jogo traz múltiplos níveis com dificuldade crescente, animações, efeitos sonoros e um sistema de pontuação e ranking.
 
 ## Acessando o site do Jogo
 
-[ADICIONE O LINK GERADO PELO GITHUB PAGES PARA ACESSAR A PÁGINA DO JOGO]
+https://venturapedrop.github.io/projeto-pygame-site-mateus-ahn-e-pedro-ventura/
 
