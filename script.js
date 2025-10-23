@@ -60,6 +60,7 @@ const translations = {
     development:
       "Este projeto nasceu como uma experiência de aprendizado em Python/Pygame, combinando mecânicas de tower defense com desafios de digitação. Evoluímos de um protótipo simples para uma aventura com 10 níveis, batalhas contra chefes e um sistema completo de pontuação.<br /><br />Criado por Mateus Ahn &amp; Pedro Ventura",
     galleryTitle: "Capturas de Tela",
+    devlogTitle: "Registro de Desenvolvimento",
     footerBrand: "Digitore",
     footerDemo: "Demonstração",
     footerInstructions: "Instruções",
@@ -129,6 +130,7 @@ const translations = {
     development:
       "This project started as a Python/Pygame learning journey, combining tower defense mechanics with typing challenges. It evolved into a full adventure with ten handcrafted levels, boss battles, and a complete scoring system.<br /><br />Created by Mateus Ahn &amp; Pedro Ventura",
     galleryTitle: "Screenshots",
+    devlogTitle: "Development Log",
     footerBrand: "Tower of Typing",
     footerDemo: "Game Demo",
     footerInstructions: "Instructions",
@@ -237,5 +239,91 @@ applyTranslations(currentLang);
     if (e.key === "Escape") close();
     if (e.key === "ArrowLeft") show(current - 1);
     if (e.key === "ArrowRight") show(current + 1);
+  });
+})();
+
+// --- Development Log Modal ---
+(function setupDevlogModal() {
+  const openBtn = document.querySelector("[data-devlog-open]");
+  const modal = document.querySelector("[data-devlog-modal]");
+  const closeBtn = document.querySelector("[data-devlog-close]");
+  const timeline = document.querySelector("[data-devlog-timeline]");
+
+  if (!openBtn || !modal || !timeline) return;
+
+  // Commit data extracted from the provided log
+  const commits = [
+    { hash: "0fc25e3", date: "2025-10-22", message: "organized game object aspects", author: "matahn" },
+    { hash: "117f923", date: "2025-10-22", message: "Final Version Complete", author: "matahn", coauthor: "Pedro Ventura" },
+    { hash: "6511a49", date: "2025-10-22", message: "final version", author: "matahn", coauthor: "Pedro Ventura" },
+    { hash: "8e1509f", date: "2025-10-21", message: "slight code changes. testing version", author: "matahn" },
+    { hash: "6c9382f", date: "2025-10-21", message: "functional game", author: "matahn" },
+    { hash: "db706f5", date: "2025-10-21", message: "Fixed enemy_config", author: "Pedro Ventura" },
+    { hash: "1ef9e1e", date: "2025-10-21", message: "minor changes to resolution after scale change", author: "matahn" },
+    { hash: "af5c96c", date: "2025-10-21", message: "teste scale", author: "matahn" },
+    { hash: "1fb28bc", date: "2025-10-21", message: "testing boss", author: "matahn" },
+    { hash: "206bd81", date: "2025-10-21", message: "minor changes", author: "matahn" },
+    { hash: "7da5936", date: "2025-10-21", message: "finalizacao do codigo e elaboracao do arquivo read me. aderindo a rubricas", author: "matahn", coauthor: "Pedro Ventura" },
+    { hash: "7f9b852", date: "2025-10-21", message: "changed font color to white", author: "matahn" },
+    { hash: "70088dc", date: "2025-10-20", message: "hidden ending", author: "matahn" },
+    { hash: "65f3dd7", date: "2025-10-20", message: "testing final message", author: "matahn" },
+    { hash: "5939eac", date: "2025-10-20", message: "text color change and minor bug fixes.", author: "matahn" },
+    { hash: "a2fa086", date: "2025-10-20", message: "font color change", author: "matahn" },
+    { hash: "8044e13", date: "2025-10-20", message: "second boss position corrected", author: "matahn" },
+    { hash: "43a748c", date: "2025-10-20", message: "boss text easier", author: "matahn" },
+    { hash: "83fb9f5", date: "2025-10-20", message: "removed acentos from portuguese words in boss", author: "matahn" },
+    { hash: "52c03c8", date: "2025-10-20", message: "implementado funcionalidades de background e edicao de codigo", author: "matahn" },
+    { hash: "0ea8297", date: "2025-10-20", message: "Added background files", author: "Pedro Ventura" },
+    { hash: "fb3f822", date: "2025-10-20", message: "tentativa de correcao (nao consigo ver o boss) hitbox de box", author: "matahn" },
+    { hash: "1ae67bd", date: "2025-10-20", message: "boss text translation added", author: "matahn" },
+    { hash: "11a2bf7", date: "2025-10-19", message: "Fixed boss hitbox", author: "Pedro Ventura" },
+    { hash: "a3c815b", date: "2025-10-17", message: "reverted to full screen", author: "matahn" },
+    { hash: "e5c1cf3", date: "2025-10-17", message: "translation complete. testing window size", author: "matahn" },
+    { hash: "4ef75b7", date: "2025-10-17", message: "Changed fonts, sounds & layouts", author: "Pedro Ventura" },
+    { hash: "54fcb20", date: "2025-10-17", message: "boss sprites added", author: "matahn" },
+    { hash: "22535ad", date: "2025-10-17", message: "Background, explosion, and level up sounds", author: "Pedro Ventura" },
+    { hash: "7007049", date: "2025-10-16", message: "recovered version", author: "matahn" },
+    { hash: "8ecbe09", date: "2025-10-16", message: "Rearranged file structure", author: "Pedro Ventura" },
+    { hash: "f82a349", date: "2025-10-16", message: "colocado no git correto", author: "matahn" },
+    { hash: "ea39d37", date: "2025-10-14", message: "add deadline", author: "github-classroom[bot]" },
+    { hash: "029443a", date: "2025-08-25", message: "Initial commit", author: "github-classroom[bot]" }
+  ];
+
+  function populateTimeline() {
+    timeline.innerHTML = commits.map(commit => `
+      <div class="devlog-commit">
+        <div class="devlog-commit__date">
+          <span class="devlog-commit__hash">${commit.hash}</span>
+          ${commit.date}
+        </div>
+        <div class="devlog-commit__message">${commit.message}</div>
+        <div class="devlog-commit__author">by ${commit.author}</div>
+        ${commit.coauthor ? `<div class="devlog-commit__coauthor">Co-authored-by: ${commit.coauthor}</div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  function openModal() {
+    populateTimeline();
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn?.addEventListener("click", closeModal);
+
+  // Close on backdrop click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  window.addEventListener("keydown", (e) => {
+    if (!modal.hidden && e.key === "Escape") closeModal();
   });
 })();

@@ -53,15 +53,14 @@
             >
               Download Game
             </a>
-            <a
+            <button
               class="cta cta--ghost"
-              href="https://docs.google.com/document/d/1UTYUpS9Fj7U7AozeZWSsONl_-H3UoyaLqMTI1vQHig8/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              type="button"
+              data-devlog-open
               data-i18n="ctaDevlog"
             >
               Development Log
-            </a>
+            </button>
           </div>
           <div class="hero__feature-grid">
             <article class="feature-card">
@@ -314,6 +313,21 @@
         <figcaption class="lightbox__caption"></figcaption>
       </figure>
       <button class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Next screenshot">&#10095;</button>
+    </div>
+
+    <!-- Development Log modal -->
+    <div class="devlog-modal" data-devlog-modal hidden aria-modal="true" role="dialog" aria-label="Development Log">
+      <div class="devlog-modal__content">
+        <header class="devlog-modal__header">
+          <h2 class="devlog-modal__title" data-i18n="devlogTitle">Development Log</h2>
+          <button class="devlog-modal__close" data-devlog-close aria-label="Close development log">&times;</button>
+        </header>
+        <div class="devlog-modal__body">
+          <div class="devlog-timeline" data-devlog-timeline>
+            <!-- Timeline will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer class="footer">

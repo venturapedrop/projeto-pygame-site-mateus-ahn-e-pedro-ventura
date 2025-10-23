@@ -199,6 +199,7 @@ footer {
   background: linear-gradient(90deg, var(--primary) 0%, #ffb347 100%);
   color: var(--text-light);
   font-size: 1.2rem;
+  font-family: "Press Start 2P", monospace;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -460,6 +461,141 @@ footer {
 .lightbox__nav--next {
   grid-column: 3;
   grid-row: 2;
+}
+
+/* Development Log Modal */
+.devlog-modal[hidden] {
+  display: none !important;
+}
+
+.devlog-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(10, 4, 1, 0.88);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.devlog-modal__content {
+  background: var(--panel-light);
+  border-radius: 20px;
+  border: 3px solid var(--panel-outline);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  width: min(90vw, 800px);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Press Start 2P", monospace;
+}
+
+.devlog-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 16px;
+  border-bottom: 2px solid rgba(115, 53, 8, 0.15);
+}
+
+.devlog-modal__title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #b1450d;
+  letter-spacing: 0.2rem;
+}
+
+.devlog-modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 138, 31, 0.1);
+  border: 2px solid rgba(255, 138, 31, 0.3);
+  color: var(--primary-dark);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.devlog-modal__close:hover {
+  background: rgba(255, 138, 31, 0.2);
+}
+
+.devlog-modal__body {
+  padding: 20px 28px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.devlog-timeline {
+  position: relative;
+}
+
+.devlog-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(255, 138, 31, 0.3) 100%);
+}
+
+.devlog-commit {
+  position: relative;
+  padding-left: 56px;
+  margin-bottom: 24px;
+}
+
+.devlog-commit::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--panel-light);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.devlog-commit__hash {
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #8d430e;
+  background: rgba(255, 233, 183, 0.6);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.devlog-commit__date {
+  font-size: 0.9rem;
+  color: rgba(57, 26, 3, 0.7);
+  margin-bottom: 4px;
+}
+
+.devlog-commit__message {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.devlog-commit__author {
+  font-size: 0.9rem;
+  color: rgba(57, 26, 3, 0.8);
+  font-style: italic;
+}
+
+.devlog-commit__coauthor {
+  font-size: 0.85rem;
+  color: rgba(57, 26, 3, 0.7);
+  margin-top: 2px;
 }
 
 .how-to {
